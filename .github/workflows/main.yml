@@ -16,6 +16,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
-          ACCESS_TOKEN: 6f20be12cd75b9fb83dca2621dc698b2cc0217ba
+          ACCESS_TOKEN: chalk2017
           BRANCH: gh-pages
           FOLDER: dist
