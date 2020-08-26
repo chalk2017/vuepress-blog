@@ -14,8 +14,8 @@ jobs:
           npm run build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.5.9  // 引用别人的部署插件
+        uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
-          ACCESS_TOKEN: 6f20be12cd75b9fb83dca2621dc698b2cc0217ba   // 这里需要设置成你的 token
+          ACCESS_TOKEN: 6f20be12cd75b9fb83dca2621dc698b2cc0217ba
           BRANCH: gh-pages
           FOLDER: dist
