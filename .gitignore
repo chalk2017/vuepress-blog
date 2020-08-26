@@ -1,0 +1,13 @@
+# npm
+package-lock.json
+node_modules
+
+# vscode
+.vscode
+
+# vuepress 
+dist
+.temp
+
+# 百度链接推送
+urls.txt
