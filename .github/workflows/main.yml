@@ -13,9 +13,14 @@ jobs:
           npm install
           npm run build
 
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@v0.2.0
+        with:
+          ssh-private-key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDENcDRZAPHZ6BNJTmsvJuS41+XgAs5dUm3RxJ/4Z6nAk/atismBG6H9fhzkVf9tqNLa/EutWr8zKFe+e5IeE1mI4Hmp6t1celnu9TdFD4SkoOPAMN15LotrS9ZhTRI+kwklnnEip6wWC0nJoEXxXyaZH2UuNnSCL4SmU4AqBg9PbsRt1JlhoyjZ1nA5g84jKmOq9+Azdj+z8daXHFIhnQ4d/XYEGArfLPZEr5UGBSlHMW4gbqWf5rt4ULRyRtXZaO/3ZcI2zuSdaHcs9XDRIdztAncmjc3rgA8hvRb786uLoGaHZ45XvhyxqQysYWx+KpwhcjhYho9hHcOOFwjjlcJ chaoquny@cn.ibm.com
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
-          ACCESS_TOKEN: 3e8fde7477c92be1c801464d066b3d5965031755
+          SSH: true
           BRANCH: gh-pages
           FOLDER: dist
