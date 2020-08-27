@@ -15,12 +15,42 @@ module.exports = {
     description: '冉夜不再写代码了~',
     plugins: [
         [
-            'vuepress-plugin-clean-urls', // 精简路由url后缀名
+            'clean-urls', // 精简路由url后缀名
             {
                 normalSuffix: '', //  page/article.html => page/article
                 // indexSuffix: '/', // page/index.md => page
                 notFoundPath: '/404.html',
             },
+        ],
+        [
+            'container',
+            {
+                type: 'center',
+                defaultTitle: '',
+            }
+        ],
+        [
+            'container',
+            {
+                type: 'right',
+                defaultTitle: '',
+            }
+        ],
+        [
+            'container',
+            {
+                type: 'details',
+                before: (info) => `<details><summary>${info}</summary><p>`,
+                after: `</p></details>`
+            }
+        ],
+        [
+            'constainer',
+            {
+                type: 'toTop',
+                before: `<div class="return-to-top">`,
+                after: `</div>`
+            }
         ]
     ],
     markdown: {
@@ -31,24 +61,32 @@ module.exports = {
     themeConfig: { //默认主题配置
         logo: `/assets/img/ranye.png`, //导航菜单的logo，默认public目录
         nav: [{ //导航菜单配置
-                text: 'Home',
+                text: '主页',
                 link: '/'
             },
+            // {
+            //     text: 'Page',
+            //     link: '/page/'
+            // },
             {
-                text: 'Page',
-                link: '/page/'
-            },
-            {
-                text: 'Arts',
-                ariaLabel: '文章列表',
+                text: '技术杂文',
+                ariaLabel: '技术杂文',
                 items: [{
-                    text: 'Chinese',
-                    link: '/page/article'
+                    text: 'Github Actions 入门指导',
+                    link: '/page/articles/github_action_start'
                 }]
             },
             {
-                text: 'External',
-                link: 'https://google.com'
+                text: 'Javascirpt',
+                ariaLabel: '分类文章',
+                items: [{
+                    text: '你不了解的js语法',
+                    link: '/page/javascript/you_unknowed_js'
+                }]
+            },
+            {
+                text: '我的博客',
+                link: 'https://www.cnblogs.com/wujianbufengsao/'
             },
         ]
     },
