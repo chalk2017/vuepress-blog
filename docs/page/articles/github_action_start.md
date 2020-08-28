@@ -6,7 +6,7 @@
 
 > 官网地址：[https://docs.github.com/cn/actions](https://docs.github.com/cn/actions)
 
-::: center
+::: left
 
 ##### Github Actions 是干什么用的？
 
@@ -23,7 +23,7 @@
 
 > 总结：上面两个例子中，知道通过 actions 可以上传，可以编译打包。不过，我们也可以用 actions 做自动化测试，只要有相应的脚本就可以实现。
 
-::: center
+::: left
 
 ##### Github Actions 实质是什么？
 
@@ -31,7 +31,8 @@
 
 > 简单地说，Actions 就相当于 Github 给你提供了一个 linux，你可以在里面上执行脚本。
 > 其实 Github 只是给你创建了一个镜像，供你去执行脚本和命令，等你执行完了镜像会被删除。
-> ::: center
+
+::: left
 
 ##### Github Actions 脚本怎么写？
 
@@ -137,7 +138,7 @@
 
 > 这行代码我们几乎都会用上，它可以获取到我要操作的分支的代码，就是把它 checkout
 
-::: center
+::: left
 
 ##### Github Actions 实现 Github Page 的自动编译打包上传
 
