@@ -39,6 +39,13 @@ module.exports = {
         [
             'container',
             {
+                type: 'left',
+                defaultTitle: '',
+            }
+        ],
+        [
+            'container',
+            {
                 type: 'details',
                 before: (info) => `<details><summary>${info}</summary><p>`,
                 after: `</p></details>`
