@@ -14,7 +14,7 @@
 
 > 具体的解释可以参照官网的说明，我这里举两个例子。
 > 场景 1： 一般的项目都有迭代不同的版本，但总会有一个 master 或 dev/pro 的版本做为最新版，一般的情况下，我们会在 github 上开不同的分支来管理，然后用版本号来区分，如下面这种：
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827141504658-173384996.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827141504658-173384996.png)
 
 > 但我们每完成一个固定的版本都需要手动更新到 master 或 dev 分支上，甚至我想再开一个仓库去存放最新版本，那我们也每次都得手动 push 更新。
 > 不过这时后我们就可以用 github actions，选择我们要触发的时机（pull 还是 push？以及在哪个分支操作），然后代码上传就可以自动同步。
@@ -77,7 +77,7 @@
 
 - name:CI 是指定流程的名称是“CI”，当 actions 开始执行的时候，我们点 actions 选项卡切换到 actions 页面就能看到
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827144549325-1748162259.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827144549325-1748162259.png)
 > 上图中红框的就是这个 name
 
 - on: 指定触发时机，是 push 还是 pull 的时候触发脚本
@@ -148,7 +148,7 @@
 
 - 在 git 工程下先创建一个 .github 文件夹，如下图：
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827153522336-1510205876.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827153522336-1510205876.png)
 > .github 文件夹和你的 .git 文件夹是在同一个路径下，不过一般.git 文件夹默认是被隐藏的。
 
 - 然后.github 文件夹下在创建一个 workflows 文件夹
@@ -158,7 +158,7 @@
 - 再在 workflows 文件夹下创建一个 yml 文件，名字随便起，github 只要能找到 workflows 文件夹，并且下面有 yml 文件就会执行它的脚本，如果有多个，会顺次执行。
 
 > 在这我附上我本地的目录解构，方便参考：
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827154312331-1214640374.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827154312331-1214640374.png)
 
 - 以下是 yml 文件的写法，我每行都附上注释，方便理解
 
@@ -200,7 +200,7 @@ ${{ secrets.DEPLOY_KEY }}
 
 > 在 github 上一切与用户隐私相关的，都只有登录账号的本人才能看到，比如说 ssh 公钥私钥，但 actions 想要操作 github 就必须要获取这些认证，所以 github 给 actions 暴露了一些环境变量，而 actions 脚本可以通过\${{xxxx}}的方式来获取环境变量的内容。
 > 这里我举个例子:
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827160628306-349931853.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827160628306-349931853.png)
 
 > 在上面的这个仓库中，先选择 settings 选项卡，切换到仓库的设置页面，然后左侧菜单的选择 secrets 进入隐私页面，右侧点 New secret 按钮来创建一个私钥变量，在上图中我已经把私钥创建完了，并且名称是 DEPLOY_KEY，而 DEPLOY_KEY 就是获取私钥的环境变量名称，也就是脚本中的
 
@@ -211,19 +211,19 @@ ${{ secrets.DEPLOY_KEY }}
 - 上传默认分支
 
 > Actions 只识别默认分支的 .github/workflows/xxx.yml 脚本，如果脚本不在默认分支下，Actions 则因为无法找到显示初始页面。（这里算是一个坑）
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827162809628-1507943887.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827162809628-1507943887.png)
 > 如上图，我这里的工作流程在 dev 分支中
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827162908887-1454022197.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827162908887-1454022197.png)
 > 而 dev 并不是默认分支，默认分支 gh-pages 中并没有.github 文件夹，这时我点击 Actions
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827163056137-446059296.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827163056137-446059296.png)
 
 > 它会显示这个页面，这是初始页面，因为找不到 workflows 所以 github 在引导你创建一个，
 > 而一直处在上面这个页面的原因主要是找不到工作流程文件，
 > git 会从默认分支下找.github/workflows/_.yml 文件，并且_.yml 是个合法的 yml 脚本，你不能用 json 语法冒充，所以，如果不满足上面这个条件，就会一直显示上图页面。
 > 反观如果找到工作流程呢
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827163737053-704968051.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827163737053-704968051.png)
 
 > 就会进入这个画面，而 results 是每次执行的记录。
 > 当上面的页面出现，但 results 并没有新增记录，原因就是 on 事件没有触发，on 包括 push 和 pull，那就有可能你的语法写错了。
@@ -242,18 +242,18 @@ on:
 
 - 通过 push 代码触发流程执行
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164154839-1240694628.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827164154839-1240694628.png)
 
 > 如果触发了工作流程，脚本就会被执行，如上图就会多出一条记录。其中 update 是你在 commit 后面的注释。点击 update 进入下图
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164430192-1290011031.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827164430192-1290011031.png)
 
 > 这里能看到每个 job 和每个 step，因为只有一个 job 所以左侧菜单只显示一个，右侧则是按顺序执行每个 step。step 可以展开看到详细的信息，如下图：
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164602523-1458679203.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827164602523-1458679203.png)
 
 > 这些信息方便我们查看错误。
 > 最后附上一个执行成功的图片，以供参考：
 
-> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827165252314-1749126849.png)
+> ![来自冉夜博客园](/vuepress-blog/picture/page/articles/github_action_start/1145671-20200827165252314-1749126849.png)
 
 > 本文作者： 冉夜
 > 本文链接：https://www.cnblogs.com/wujianbufengsao/articles/13572397.html
