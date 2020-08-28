@@ -17,7 +17,7 @@ module.exports = {
         [
             'clean-urls', // 精简路由url后缀名
             {
-                normalSuffix: '', //  page/article.html => page/article
+                normalSuffix: '/', //  page/article.html => page/article
                 // indexSuffix: '/', // page/index.md => page
                 notFoundPath: '/404.html',
             },
@@ -73,7 +73,7 @@ module.exports = {
                 ariaLabel: '技术杂文',
                 items: [{
                     text: 'Github Actions 入门指导',
-                    link: '/page/articles/github_action_start'
+                    link: '/page/articles/github_action_start/'
                 }]
             },
             {
@@ -81,7 +81,7 @@ module.exports = {
                 ariaLabel: '分类文章',
                 items: [{
                     text: '你不了解的js语法',
-                    link: '/page/javascript/you_unknowed_js'
+                    link: '/page/javascript/you_unknowed_js/'
                 }]
             },
             {
