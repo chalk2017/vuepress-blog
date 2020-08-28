@@ -76,8 +76,10 @@
 ```
 
 - name:CI 是指定流程的名称是“CI”，当 actions 开始执行的时候，我们点 actions 选项卡切换到 actions 页面就能看到
-  > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827144549325-1748162259.png)
-  > 上图中红框的就是这个 name
+
+> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827144549325-1748162259.png)
+> 上图中红框的就是这个 name
+
 - on: 指定触发时机，是 push 还是 pull 的时候触发脚本
 
 ```
@@ -123,10 +125,11 @@
 > steps 中的脚本，常用的还有 uses，with，env 等关键字。
 
 - steps 中的 uses 关键字和 with 关键字
-  > uses 用来调用第三方依赖，with 则是这个依赖方法需要的入参。
-  > 这部分很常用，因为我们在用 actions 的时候大多都会找一些比较成熟的工具（轮子）直接使用，很少会自己写轮子。
-  > 在下面的案例中，我会详细解释这块。
-  > 而上面模板例子里的
+
+> uses 用来调用第三方依赖，with 则是这个依赖方法需要的入参。
+> 这部分很常用，因为我们在用 actions 的时候大多都会找一些比较成熟的工具（轮子）直接使用，很少会自己写轮子。
+> 在下面的案例中，我会详细解释这块。
+> 而上面模板例子里的
 
 ```
 - uses: actions/checkout@v2
@@ -144,13 +147,19 @@
 > \*\*\* 说一下 yml 文件，yml 并不是纯脚本，这有点类似于 json 文件，是一种保存键值对数据的文件类型。
 
 - 在 git 工程下先创建一个 .github 文件夹，如下图：
-  > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827153522336-1510205876.png)
-  > .github 文件夹和你的 .git 文件夹是在同一个路径下，不过一般.git 文件夹默认是被隐藏的。
+
+> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827153522336-1510205876.png)
+> .github 文件夹和你的 .git 文件夹是在同一个路径下，不过一般.git 文件夹默认是被隐藏的。
+
 - 然后.github 文件夹下在创建一个 workflows 文件夹
-  > 注意：是 workflows 而不是 workflow ， 也不是 .workflows，起初我在构建的时候就因为名字多一个点和少个 s 始终无法看到到 actions 的页面。
+
+> 注意：是 workflows 而不是 workflow ， 也不是 .workflows，起初我在构建的时候就因为名字多一个点和少个 s 始终无法看到到 actions 的页面。
+
 - 再在 workflows 文件夹下创建一个 yml 文件，名字随便起，github 只要能找到 workflows 文件夹，并且下面有 yml 文件就会执行它的脚本，如果有多个，会顺次执行。
-  > 在这我附上我本地的目录解构，方便参考：
-  > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827154312331-1214640374.png)
+
+> 在这我附上我本地的目录解构，方便参考：
+> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827154312331-1214640374.png)
+
 - 以下是 yml 文件的写法，我每行都附上注释，方便理解
 
 ```
@@ -193,15 +202,17 @@ ${{ secrets.DEPLOY_KEY }}
 > 这里我举个例子:
 > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827160628306-349931853.png)
 
-> 在上面的这个仓库中，先选择 settings 选项卡，切换到仓库的设置页面，
-> 　　然后左侧菜单的选择 secrets 进入隐私页面，右侧点 New secret 按钮来创建一个私钥变量，
-> 　　在上图中我已经把私钥创建完了，并且名称是 DEPLOY_KEY，而 DEPLOY_KEY 就是获取私钥的环境变量名称，
-> 　　也就是脚本中的 \${{ secrets.DEPLOY_KEY }}
+> 在上面的这个仓库中，先选择 settings 选项卡，切换到仓库的设置页面，然后左侧菜单的选择 secrets 进入隐私页面，右侧点 New secret 按钮来创建一个私钥变量，在上图中我已经把私钥创建完了，并且名称是 DEPLOY_KEY，而 DEPLOY_KEY 就是获取私钥的环境变量名称，也就是脚本中的
+
+```
+${{ secrets.DEPLOY_KEY }}
+```
 
 - 上传默认分支
-  > Actions 只识别默认分支的 .github/workflows/xxx.yml 脚本，如果脚本不在默认分支下，Actions 则因为无法找到显示初始页面。（这里算是一个坑）
-  > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827162809628-1507943887.png)
-  > 如上图，我这里的工作流程在 dev 分支中
+
+> Actions 只识别默认分支的 .github/workflows/xxx.yml 脚本，如果脚本不在默认分支下，Actions 则因为无法找到显示初始页面。（这里算是一个坑）
+> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827162809628-1507943887.png)
+> 如上图，我这里的工作流程在 dev 分支中
 
 > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827162908887-1454022197.png)
 > 而 dev 并不是默认分支，默认分支 gh-pages 中并没有.github 文件夹，这时我点击 Actions
@@ -230,7 +241,8 @@ on:
 > 还有一点注意了，yml 文件不支持 // 这种注释，习惯这么写的小伙伴如果在 on 或者之前添加了 //这种注释，因为语法不允许，所以也不会触发脚本。
 
 - 通过 push 代码触发流程执行
-  > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164154839-1240694628.png)
+
+> ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164154839-1240694628.png)
 
 > 如果触发了工作流程，脚本就会被执行，如上图就会多出一条记录。其中 update 是你在 commit 后面的注释。点击 update 进入下图
 > ![来自冉夜博客园](/picture/page/articles/github_action_start/1145671-20200827164430192-1290011031.png)
