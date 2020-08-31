@@ -85,10 +85,10 @@ module.exports = {
             },
             {
                 text: 'Javascirpt',
-                ariaLabel: '分类文章',
+                ariaLabel: 'Javascirpt',
                 items: [{
-                    text: '你不了解的js语法',
-                    link: '/page/javascript/you_unknowed_js/'
+                    text: '大佬们代买中的function前为什么会有分号或叹号',
+                    link: '/page/javascript/大佬们代买中的function前为什么会有分号或叹号/'
                 }]
             },
             {
