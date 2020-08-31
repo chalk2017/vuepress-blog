@@ -8,8 +8,8 @@
     <link rel="icon" href="/vuepress-blog/assets/img/ranye.png">
     <link rel="stylesheet" href="/vuepress-blog/style.css">
     <meta name="description" content="冉夜不再写代码了~">
-    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.388b45c7.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.e8cc21c3.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.9adbd6bd.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/8.da6a8a77.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/3.8091658d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.f82f4f78.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.74bb7079.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.bb76ae75.js"><link rel="prefetch" href="/vuepress-blog/assets/js/7.bf246f4a.js">
-    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.388b45c7.css">
+    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.3725a23b.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.e6ae7249.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.9adbd6bd.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/8.d7dc5b80.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/3.8091658d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.f82f4f78.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.74bb7079.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.bb76ae75.js"><link rel="prefetch" href="/vuepress-blog/assets/js/7.bf246f4a.js">
+    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.3725a23b.css">
   </head>
   <body>
     <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-blog/" class="home-link router-link-active"><img src="/vuepress-blog/assets/img/ranye.png" alt="无剑不风骚" class="logo"> <span class="site-name can-hide">无剑不风骚</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
@@ -38,21 +38,21 @@ var func = function(arg) {
 console.log(func(b));
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><blockquote><p>执行上面的代码控制台会打印出 test
 如果我把上面这段代码的分号去掉会怎么样呢？
-<img src="https://img2020.cnblogs.com/blog/1145671/202008/1145671-20200828172511589-1993915914.png" alt="">
+![]((/vuepress-blog/picture/page/javascript/大佬们代买中的 function 前为什么会有分号或叹号/1145671-20200828172511589-1993915914.png)
 结果还是会打印出'test'，到这都没问题。
 但有很多的大佬们喜欢匿名函数直接调用，就像下面这样的代码</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>//定义一个变量
 var b = 'test'
 //匿名函数直接调用
 (function(arg){return arg})(b)
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><blockquote><p>我们试着执行一下
-<img src="https://img2020.cnblogs.com/blog/1145671/202008/1145671-20200828172945456-367632280.png" alt="">
+<img src="/vuepress-blog/picture/page/javascript/%E5%A4%A7%E4%BD%AC%E4%BB%AC%E4%BB%A3%E4%B9%B0%E4%B8%AD%E7%9A%84function%E5%89%8D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E5%88%86%E5%8F%B7%E6%88%96%E5%8F%B9%E5%8F%B7/1145671-20200828172945456-367632280.png" alt="">
 果不其然报错了，那我在匿名函数前加上一个分号';'再试试
-<img src="https://img2020.cnblogs.com/blog/1145671/202008/1145671-20200828173120322-165868733.png" alt="">
+<img src="/vuepress-blog/picture/page/javascript/%E5%A4%A7%E4%BD%AC%E4%BB%AC%E4%BB%A3%E4%B9%B0%E4%B8%AD%E7%9A%84function%E5%89%8D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E5%88%86%E5%8F%B7%E6%88%96%E5%8F%B9%E5%8F%B7/1145671-20200828173120322-165868733.png" alt="">
 正确输出'test'
 还是用上面那个匿名函数，我是用括号给括了起来，有些人看的别扭，那我把括号去掉试试</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>//这里我为了方便查看函数执行，我在函数里添加console.log
 function(){console.log('test')}()
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="https://img2020.cnblogs.com/blog/1145671/202008/1145671-20200828173637777-1700675711.png" alt=""></p> <blockquote><p>依然不负众望的报错了，然后 function 前加一个叹号'!'
-<img src="https://img2020.cnblogs.com/blog/1145671/202008/1145671-20200828174342578-1585935397.png" alt="">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="/vuepress-blog/picture/page/javascript/%E5%A4%A7%E4%BD%AC%E4%BB%AC%E4%BB%A3%E4%B9%B0%E4%B8%AD%E7%9A%84function%E5%89%8D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E5%88%86%E5%8F%B7%E6%88%96%E5%8F%B9%E5%8F%B7/1145671-20200828173637777-1700675711.png" alt=""></p> <blockquote><p>依然不负众望的报错了，然后 function 前加一个叹号'!'
+<img src="/vuepress-blog/picture/page/javascript/%E5%A4%A7%E4%BD%AC%E4%BB%AC%E4%BB%A3%E4%B9%B0%E4%B8%AD%E7%9A%84function%E5%89%8D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E5%88%86%E5%8F%B7%E6%88%96%E5%8F%B9%E5%8F%B7/1145671-20200828174342578-1585935397.png" alt="">
 打印出了'test'，不过后面又输出了一个 true，接下来说说原因吧~</p></blockquote> <h4 id="为什么要有-和-什么时候要用它们"><a href="#为什么要有-和-什么时候要用它们" class="header-anchor">#</a> 为什么要有&quot;;&quot;和&quot;!&quot;，什么时候要用它们？</h4> <blockquote><p>（吐槽：总觉得&quot;;&quot;和信仰有关，因为总有一些极端分子不写&quot;;&quot;）
 上面的逻辑很容易看出来，两行代码，如果没有分号就会被浏览器拼到一起去执行，除非有个浏览器能识别出的关键字，比如说 let/var，才知道这是新的语句。
 但很多情况一个 js 可能会有多个人编辑，前面的代码有其别人编写，如果没写&quot;;&quot;，我们又不能修改别人的代码，这时我们就需要在我们这行补一个&quot;;&quot;分号了。
@@ -60,6 +60,6 @@ function(){console.log('test')}()
 function(){}() 并不是一个合法的算数式，所以需要&quot;!&quot;来模拟(function(){})()的执行。</p></blockquote> <h4 id="最后一个问题-关于打包"><a href="#最后一个问题-关于打包" class="header-anchor">#</a> 最后一个问题，关于打包</h4> <blockquote><p>谈若上一行代码结尾没有分号&quot;;&quot;，而首行用叹号&quot;!&quot;呢？
 其实这也是没问题的，因为!行已经被转换成表达式，而表达式是可以直接执行的。
 但在建议上不要这么写，因为在打包的时候两行代码是要拼在一起，这样很容易报错，这也就是为什么大佬们在写代码要在行首添加分号&quot;;&quot;了。</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/vuepress-blog/assets/js/app.e8cc21c3.js" defer></script><script src="/vuepress-blog/assets/js/2.9adbd6bd.js" defer></script><script src="/vuepress-blog/assets/js/8.da6a8a77.js" defer></script>
+    <script src="/vuepress-blog/assets/js/app.e6ae7249.js" defer></script><script src="/vuepress-blog/assets/js/2.9adbd6bd.js" defer></script><script src="/vuepress-blog/assets/js/8.d7dc5b80.js" defer></script>
   </body>
 </html>
